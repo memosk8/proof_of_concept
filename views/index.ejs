@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="container m-2 text-center w-100">
+<html lang="en" class="container m-2 text-center w-100 p-1">
 
 <head>
   <meta charset="UTF-8">
@@ -16,9 +16,9 @@
   <form method="post" name="submitAccount" class="container">
     <div class="form-check p-1 text-md-center">
       <label for="accNumber" class="form-label mx-1 text-primary"> Account Number : </label>
-      <input type="text" class="form-text mx-1 border-5 border-light" name="accNumber" id="accNumber" placeholder="16 digits number"
-        maxlength="16" min="16" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-        required />
+      <input type="text" class="form-text mx-1 border-3 border-light" name="accNumber" id="accNumber"
+        placeholder="16 digits number" maxlength="16" min="16"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required />
       <button type="submit" class="btn btn-primary btn-sm mx-1" value="submit">Submit </button>
     </div>
 
