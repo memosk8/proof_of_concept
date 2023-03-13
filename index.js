@@ -5,21 +5,16 @@ const
   port = 1337;
 
 app.set("view engine", "ejs");
-// decode url params
 app.use(express.urlencoded({ extended: true }));
 
-// send html form view
 app.get("/", (req, res) => {
   res.render("index");
 })
 
-//
 app.post('/', async (req, res, next) => {
 
-  // take account number from form 
   const { accNumber } = req.body;
 
-  // validate account length 
   if (accNumber.length != 16) {
     res.status(400).render("failed");
   }
@@ -27,6 +22,9 @@ app.post('/', async (req, res, next) => {
     const userInfo = await authGoogle(accNumber);
     if (userInfo) {
       res.status(200).render("success", { userInfo });
+    }
+    else{
+      res.status(404).render("failed")
     }
   }
 });
