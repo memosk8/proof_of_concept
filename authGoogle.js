@@ -19,7 +19,7 @@ async function authGoogle(accNumber) {
 
   // validate if account number is on the spreadsheet
   const rows = getRows.data.values;
-  let response;
+  let response = false;
   for (let i = 1; i < rows.length; i++) {
     if (rows[i][0] == accNumber) {
       response = rows[i];
